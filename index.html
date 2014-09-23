@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script src="js/leap-0.6.2.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/leap-plugins-0.1.7.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/underscore-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/backbone-min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/backbone.marionette.min.js" type="text/javascript" charset="utf-8"></script>
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="screen"/>
+    <title>Index</title>
+  </head>
+  <body class="body-noise">
+   <div id="title"></div>
+   <div id=main></div>
+   <div id="pointer"></div>
+   <div id="help"></div>
+   <div id="bg"></div>
+
+   <script id="empty-tpl" type="text/html" charset="utf-8">
+   </script>
+
+   <script id="image-tpl" type="text/html" charset="utf-8">
+    <div class="avatar" data-id="<%= id %>">
+      <img src="img/users/<%= name %>.png" alt="" class="avatar-img" width="200" />
+    </div/>
+   </script>
+
+   <script id="help-tpl" type="text/html" charset="utf-8">
+    <img src="img/gestures/<%= src %>" alt="" class="avatar" width="120" />
+   </script>
+
+   <script id="title-tpl" type="text/html" charset="utf-8">
+    <% if(content) { %>
+    <h1 class="heading"><%= content %></h1>
+    <% } %>
+   </script>
+
+   <script id="ticket-tpl" type="text/html" charset="utf-8">
+    <div class="ticket-container" data-id="<%= id %>">
+      <div class="ticket-issue">
+        <div class="ticket-issue-fields">
+          <div class="ticket-key">
+            <a href="#">
+              <span>ISSUE-00<%= id %></span>
+            </a>
+          </div>
+          <div class="ticket-summary">
+            <%= description %>
+          </div>
+        </div>
+        <img src="img/users/<%= user %>.png" class="ticket-avatar-img">
+        <div class="ticket-indicator <%= status %>"></div>
+      </div>
+      <div class="bg"></div>
+    </div>
+   </script>
+
+   <script id="loader-tpl" type="text/html" charset="utf-8">
+    <div class="fancy"></div>
+   </script>
+
+    <script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

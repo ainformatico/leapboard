@@ -1,0 +1,181 @@
+@import 'loader';
+@import 'noise';
+@import url(http://fonts.googleapis.com/css?family=Play);
+
+@mixin filter($prop) {
+  -webkit-filter: $prop;
+}
+
+$item-height: 200px;
+$image-size: 64px;
+
+body {
+  background: #000;
+  font-family: 'Play', sans-serif;
+}
+
+body, html, ul {
+  margin: 0;
+  padding: 0;
+}
+
+.heading {
+  background-color: #0b8ab2;
+  background-image: linear-gradient(to right, transparent, #000);
+  border-right: none;
+  border: 1px solid #0094c5;
+  color: white;
+  font-size: 3em;
+  margin: 1em 0 0 1.5em;
+  opacity: 0.8;
+  padding: 0.5em;
+  position: relative;
+  text-transform: uppercase;
+  width: 110%;
+  z-index: 1;
+}
+
+#main {
+  z-index: 100;
+}
+
+#bg {
+  background-size: 100% 100%;
+  background: url('../img/background.png') repeat scroll 0 0;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 200%;
+  z-index: -1;
+}
+
+.center {
+  text-align: center;
+}
+
+.avatars {
+  list-style: none;
+  width: 80%;
+  margin: 6% auto;
+  text-align: center;
+  li {
+    display: inline-block;
+    margin-right: 4em;
+    margin-bottom: 4em;
+  }
+  .avatar {
+    -webkit-clip-path: polygon(29% 0, 100% 0, 100% 29%, 100% 100%, 100% 100%, 29% 100%, 0 100%, 0 29%);
+    img {
+      vertical-align: bottom;
+      border: 3px solid #006791;
+    }
+    &:after {
+      display: inline-block;
+      content: ".";
+      background: #006791;
+      position: relative;
+      height: 90px;
+      bottom: 0;
+      right: 4px;
+      width: 1.5em;
+    }
+  }
+}
+
+
+.help {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  li {
+    display: inline-block;
+    background: black;
+  }
+}
+
+.hover {
+  opacity: 1;
+}
+
+.nohover {
+  opacity: 0.5;
+}
+
+.tickets {
+  list-style: none;
+  width: 80%;
+  margin: 1em auto 0 auto;
+
+  a {
+    color: #00c0ff;
+  }
+
+  li {
+    border: 1px solid #f1f1f1;
+  }
+
+  .ticket-container {
+    position: relative;
+  }
+
+  .bg {
+    background: #006791;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+
+  .ticket-issue {
+    background: transparent;
+    color: #04a1e2;
+    font-size: 20px;
+    height: $item-height;
+    position: relative;
+    z-index: 1;
+  }
+
+  .ticket-issue-fields {
+    padding: 1em 6em 1em 2em;
+  }
+
+  .ticket-indicator {
+    height: $item-height;
+    left: 0;
+    position: absolute;
+    text-indent: -9999em;
+    top: 0;
+    width: 15px;
+  }
+
+  .ticket-avatar-img {
+    height: $image-size;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: $image-size;
+  }
+
+  .success {
+    background: #33ff33;
+  }
+
+  .error {
+    background: #990000;
+  }
+}
+
+.success {
+  background: #33ff33;
+}
+
+.error {
+  background: #990000;
+}
